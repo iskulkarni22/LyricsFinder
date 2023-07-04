@@ -1,12 +1,13 @@
 body {
-    width: 200px;
-    height: 200px;
+    display: block;
+    min-width: 300px;
+    min-height: 600px;
     background-color: yellow;
 }
-iframe {
+/* iframe {
     width: 500px;
     height: 500px;
-}
+} */
 header {
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
@@ -15,3 +16,12 @@ header {
 label {
     display: block;
 }
+
+/* @keyframes lyricsPage {
+    from {
+        background-color: white;
+    } 
+    to {
+        background-color: yellow;
+    }
+} */
