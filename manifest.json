@@ -1,0 +1,20 @@
+{
+    "name": "Lyrics Finder",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "popup.js"
+    },
+    "action": {
+        "default_title": "Lyrics Finder",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ]
+}

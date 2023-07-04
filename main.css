@@ -1,0 +1,17 @@
+body {
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+}
+iframe {
+    width: 500px;
+    height: 500px;
+}
+header {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: bold;
+}
+label {
+    display: block;
+}
