@@ -2,7 +2,7 @@ body {
     display: block;
     min-width: 300px;
     min-height: 600px;
-    background-color: yellow;
+    background-color: #f7f78a;
 }
 /* iframe {
     width: 500px;
@@ -15,6 +15,10 @@ header {
 }
 label {
     display: block;
+}
+#err {
+    color: red;
+    margin-top: 5px;
 }
 
 /* @keyframes lyricsPage {
