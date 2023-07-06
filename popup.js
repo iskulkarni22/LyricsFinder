@@ -82,7 +82,7 @@ if (typeof window !== "undefined") {
             searchBtn.addEventListener('click', () => {            
                 const search_term = document.getElementById('searchterm').value;
 
-                fetch("http://localhost:3500/api_req", {
+                fetch("https://lyricsfinder-api.onrender.com/api_req", {
                     headers: {
                         search_term: search_term,
                         
