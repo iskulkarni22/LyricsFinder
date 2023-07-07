@@ -33,7 +33,7 @@ function loadLyricsPage(lyrics, song_ftitle, song_art, song_artists, song_title)
     body.style["background-color"] = "#0f202a";
     body.style["background-image"] = `url(${song_art})`;
     body.style["background-attachment"] = "fixed";
-    body.style.opacity = 0.8;
+    body.style.opacity = 0.9;
     
     // const backBtn = document.createElement("BUTTON");
     // const btnText = document.createTextNode("Go back");
