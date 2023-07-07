@@ -76,10 +76,17 @@ async function loadStorage() {
 
 if (typeof window !== "undefined") {
     loadStorage();
-    window.onload = () => {   
+    window.onload = () => {
         const searchBtn = document.getElementById('search');
         if (searchBtn) {
-            searchBtn.addEventListener('click', () => {            
+            const search_input = document.getElementById('searchterm');
+            search_input.addEventListener('keypress', (event) => {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    searchBtn.click();
+                }
+            })
+            searchBtn.addEventListener('click', () => {
                 const search_term = document.getElementById('searchterm').value;
 
                 fetch("https://lyricsfinder-api.onrender.com/api_req", {
