@@ -11,13 +11,14 @@
 
 </head>
 <body>
-    <header style="margin-bottom: 10px;">Lyrics Finder</header>
-    <div>
-        <label style="margin-bottom: 5px;">Search by "title: artist" or "artist: title"</label>
+    <header>Lyrics Finder</header>
+    <label>Search by "title: artist" or "artist: title"</label>
+    <div class="searchline">
         <input type="text" id="searchterm"/>
         <input type="submit" id="search" value="Search"/>
+        <div class="loading"></div>
     </div>
-    <div id="err" style="color: red;"></div>
-    <!-- <iframe src="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"></iframe> -->
+    <div id="err"></div>
+
 </body>
 </html>

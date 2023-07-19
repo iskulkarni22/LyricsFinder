@@ -87,6 +87,8 @@ if (typeof window !== "undefined") {
                 }
             })
             searchBtn.addEventListener('click', () => {
+                const loader = document.querySelector(".loading");
+                loader.style.visibility = "visible";
                 const search_term = encodeURIComponent(document.getElementById('searchterm').value);
                 fetch("https://lyricsfinder-api.onrender.com/api_req", {
                     headers: {
@@ -113,6 +115,7 @@ if (typeof window !== "undefined") {
 
                     loadLyricsPage(lyrics, song_ftitle, song_art, song_artists, song_title);
                 }).catch((err) => {
+                    loader.style.visibility = "hidden";
                     const errmsg = document.createTextNode(`${err.message}`);
                     const errDiv = document.getElementById("err");
                     errDiv.innerText = errmsg.textContent;

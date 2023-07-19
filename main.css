@@ -1,31 +1,42 @@
 body {
-    display: block;
+    display: inline-block;
     min-width: 300px;
     min-height: 600px;
     background-color: #f7f78a;
 }
-/* iframe {
-    width: 500px;
-    height: 500px;
-} */
 header {
+    margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
     font-weight: bold;
 }
 label {
     display: block;
+    margin-bottom: 5px;
 }
 #err {
     color: red;
     margin-top: 5px;
 }
+#search {
+    margin-left: 5px;
+}
+.loading {
+    visibility: hidden;
+    margin-left: 5px;
+    border: 4px solid #c3b217;
+    border-radius: 50%;
+    border-top: 4px solid #edd0f6;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+}
+.searchline {
+    display: inline-flex;
+    align-items: center;
+}
 
-/* @keyframes lyricsPage {
-    from {
-        background-color: white;
-    } 
-    to {
-        background-color: yellow;
-    }
-} */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
