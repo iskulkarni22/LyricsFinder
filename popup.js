@@ -28,24 +28,31 @@ function loadLyricsPage(lyrics, song_ftitle, song_art, song_artists, song_title)
     const footer_link = footer[0].querySelector("a");
     footer_link.textContent = song_title + ", " + song_artists;
 
-    
     body.style["font-size"] = "medium";
     body.style["background-color"] = "#0f202a";
     body.style["background-image"] = `url(${song_art})`;
     body.style["background-attachment"] = "fixed";
     body.style.opacity = 0.9;
     
-    // const backBtn = document.createElement("BUTTON");
-    // const btnText = document.createTextNode("Go back");
-    // backBtn.appendChild(btnText);
-    // document.body.appendChild(backBtn);
     const backBtn = document.getElementById("back");
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             window.location.href = "popup.html";
             localStorage.clear();
+            localStorage.scrollTop = 0;
+            document.scrollingElement.scrollTop = localStorage.scrollTop;
         });
     }
+    addEventListener('scroll', () => {
+        localStorage.scrollTop = document.scrollingElement.scrollTop;
+    });
+    document.addEventListener('click', link => {
+        const a = link.target.closest('a[href]');
+        if (a) {
+          link.preventDefault();
+          chrome.tabs.create({url: a.href, active: false});
+        }
+    });
 }
 
 function fetchLyrics(song_id) {
@@ -69,14 +76,14 @@ async function loadStorage() {
         const lyrics = await fetchLyrics(song_id);
 
         loadLyricsPage(lyrics, song_ftitle, song_art, song_artists, song_title);
+        document.scrollingElement.scrollTop = localStorage.scrollTop;
     }
 }
 
 
-
 if (typeof window !== "undefined") {
-    loadStorage();
     window.onload = () => {
+        loadStorage();
         const searchBtn = document.getElementById('search');
         if (searchBtn) {
             const search_input = document.getElementById('searchterm');
