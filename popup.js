@@ -11,6 +11,7 @@ function loadLyricsPage(lyrics, song_ftitle, song_art, song_artists, song_title)
     window.location.href = "lyricsPage.html";
     const html = `<p>${song_ftitle}</p><div style="padding-bottom: 25px"></div>` + lyrics + `<button id="back" style="margin-top: 5px;">Go back</button>`;
     document.write(html);
+    document.scrollingElement.scrollTop = 0;
     
     const body = document.body;
     const lines = document.querySelectorAll("p, a");
